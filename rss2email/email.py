@@ -329,7 +329,7 @@ def sendmail_send(sender, recipient, message, config=None, section='DEFAULT'):
         'sending message to {} via {}'.format(recipient, sendmail))
     try:
         p = _subprocess.Popen(
-            [sendmail, '-F', sender_name, '-f', sender_addr, recipient],
+            [sendmail],
             stdin=_subprocess.PIPE, stdout=_subprocess.PIPE,
             stderr=_subprocess.PIPE)
         stdout,stderr = p.communicate(message_bytes)
